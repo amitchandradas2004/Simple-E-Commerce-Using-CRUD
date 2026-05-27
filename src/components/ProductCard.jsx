@@ -1,12 +1,10 @@
 import { CgArrowTopRight } from "react-icons/cg";
-import { ImLocation2 } from "react-icons/im";
-import { SlCalender } from "react-icons/sl";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosStar } from "react-icons/io";
 
 const ProductCard = ({ product }) => {
-  const { title, rating, price, description, image } = product;
+  const { _id, title, rating, price, description, image } = product;
   return (
     <div
       className="
@@ -81,7 +79,7 @@ const ProductCard = ({ product }) => {
           </span>
         </div>
 
-        <Link href={`/products`}>
+        <Link href={`/products/${_id}`}>
           <span
             className="
            text-[#00A8E7] rounded-full text-sx h-8 mt-3 flex items-center hover:text-white

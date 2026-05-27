@@ -12,8 +12,8 @@ export default function Navbar() {
       path: "/products",
     },
     {
-      name: "Add Products",
-      path: "/products/add",
+      name: "Manage",
+      path: "/manageProducts",
     },
     {
       name: "About",
