@@ -6,7 +6,7 @@ import Link from "next/link";
 import { IoIosStar } from "react-icons/io";
 
 const ProductCard = ({ product }) => {
-  const { title, rating, price, description, image, stock } = product;
+  const { title, rating, price, description, image } = product;
   return (
     <div
       className="
