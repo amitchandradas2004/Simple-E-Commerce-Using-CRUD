@@ -1,3 +1,4 @@
+import { DeleteModal } from "@/components/DeleteModal";
 import { getAllProducts } from "@/lib/data";
 import { Button, Table } from "@heroui/react";
 
@@ -27,7 +28,7 @@ const ProductsPage = async () => {
                   <Table.Cell>{product.stock}</Table.Cell>
                   <Table.Cell className={"flex flex-col sm:flex-row gap-2"}>
                     <Button>Update</Button>
-                    <Button variant="danger">Delete</Button>
+                    <DeleteModal productId={product._id} />
                   </Table.Cell>
                 </Table.Row>
               ))}

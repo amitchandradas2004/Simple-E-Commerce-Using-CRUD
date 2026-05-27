@@ -18,7 +18,7 @@ const PopularProduct = async () => {
         ))}
       </div>
       <div className="flex flex-col my-5 items-center">
-        <Link href={"/allProducts"}>
+        <Link href={"/products"}>
           {" "}
           <Button variant="primary">See All Products</Button>
         </Link>
