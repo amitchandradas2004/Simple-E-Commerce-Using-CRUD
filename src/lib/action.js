@@ -39,3 +39,25 @@ export const deleteProduct = async (id) => {
   revalidatePath("/products");
   return data;
 };
+export const updateProduct = async (id, formData) => {
+  const updatedProducts = Object.fromEntries(formData.entries());
+  const modifiedData = {
+    title: updatedProducts.title,
+    price: parseFloat(updatedProducts.price),
+    image: updatedProducts.image,
+    description: updatedProducts.description,
+    stock: parseInt(updatedProducts.stock),
+    rating: parseInt(updatedProducts.rating),
+  };
+  const res = await fetch(`http://localhost:8000/products/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(modifiedData),
+  });
+  const data = await res.json();
+  if (!res.ok) return;
+  revalidatePath("/products");
+  return data;
+};
